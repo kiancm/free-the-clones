@@ -16,8 +16,8 @@
     "url": "https://github.com/kianmehrabani/free-the-clones/issues"
   },
   "homepage": "https://github.com/kianmehrabani/free-the-clones#readme",
-  "dependencies": {},
-  "devDependencies": {
-    "http-server": "^0.12.3"
-  }
+  "dependencies": {
+    "serve": "^11.3.0"
+  },
+  "devDependencies": {}
 }

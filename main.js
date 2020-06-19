@@ -6,15 +6,17 @@ const ctx = canvas.getContext("2d");
 const states = { PRISON: 0, CLONES: 1, PLAY: 2, END: 3 };
 let state = states.PRISON;
 
-const size = Math.min(window.innerWidth, window.innerHeight);
-const numItems = 10;
-const itemSize = size / numItems;
-canvas.width = size;
-canvas.height = size;
+let itemSize = 100;
+const width = window.innerWidth;
+const height = window.innerHeight;
+const widthItems = Math.floor(width / itemSize);
+const heightItems = Math.floor(height / itemSize);
+canvas.width = width;
+canvas.height = height;
 
 let switchFill = false;
-for (let i = 0; i < numItems; i++) {
-  for (let j = 0; j < numItems; j++) {
+for (let i = 0; i < widthItems; i++) {
+  for (let j = 0; j < heightItems; j++) {
     switchFill = (i + j) % 2;
     ctx.fillStyle = switchFill ? fill1 : fill2;
     ctx.fillRect(i * itemSize, j * itemSize, itemSize, itemSize);
@@ -114,6 +116,9 @@ canvas.addEventListener("click", function (e) {
   }
 });
 
+canvas.setInterval(() => {
+
+}, interval);
 canvas.addEventListener("click", function (e) {
   state =
     cloneList.length &&
